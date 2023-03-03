@@ -16,7 +16,7 @@ const Header = () => {
     <>
       <div className={styles.container}>
         <div className={styles.avatar}>
-          <h2>医疗商城</h2>
+          <h2></h2>
           <Avatar.Root className={styles.AvatarRoot}>
             <Avatar.Image
               className={styles.AvatarImage}

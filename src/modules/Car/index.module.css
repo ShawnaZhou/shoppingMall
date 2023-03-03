@@ -1,0 +1,89 @@
+.carList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.carHeader {
+    height: 3vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 2px solid #ECEDF0;
+}
+
+.payBtn {
+    background: blue;
+}
+
+.car {
+    height: 100%;
+    margin: 1rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.carItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: 1rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.carItemPic {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ECEDF0;
+}
+
+.price {
+    font-weight: bolder;
+    margin-top: .3rem;
+}
+
+.count {
+    color: gray;
+    margin-top: .3rem;
+}
+
+.carItemImg {
+    height: 200px;
+    object-fit: contain;
+}
+
+.carItemDetail {
+    padding: 0 0 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tag {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: blue;
+    text-align: center;
+    color: #fff;
+    line-height: 1.3rem;
+    font-size: .7rem;
+    height: 1.3rem;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.patBtns {
+    margin-top: 1rem;
+    background-color: blue;
+}

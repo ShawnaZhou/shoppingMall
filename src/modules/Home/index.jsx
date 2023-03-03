@@ -4,6 +4,7 @@ import styles from "./style.module.css";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { baseUrl } from "@/assets/constants";
 
 const Home = () => {
   const router = useRouter();
@@ -13,7 +14,7 @@ const Home = () => {
   }, []);
 
   const getProducts = () => {
-    const url = `http://100.125.109.30:5001/product/list`;
+    const url = `${baseUrl}/product/list`;
     fetch(url)
       .then((res) => res.json())
       .then((res) => {

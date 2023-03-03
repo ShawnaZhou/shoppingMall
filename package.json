@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "13.1.6",
     "@radix-ui/react-avatar": "^1.0.1",
+    "@radix-ui/react-checkbox": "^1.0.2",
     "@radix-ui/react-icons": "^1.2.0",
     "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-scroll-area": "^1.0.2",
@@ -19,6 +20,8 @@
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
+    "parallax-js": "^3.1.0",
+    "pubsub.js": "^1.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
