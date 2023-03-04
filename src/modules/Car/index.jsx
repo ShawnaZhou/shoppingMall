@@ -35,6 +35,7 @@ const CarModule = () => {
       productId: row.product.productId,
       orderPrice: Number(row.product.productPrice) * Number(row.shopCar.size),
       saleNum: row.shopCar.size,
+      shopCarId: row.shopCar.shopCarId,
     };
     const url = `${baseUrl}/order`;
     fetch(url, {

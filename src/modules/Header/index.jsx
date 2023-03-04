@@ -38,7 +38,9 @@ const Header = () => {
     <>
       <div className={styles.container}>
         <div className={styles.avatar}>
-          <h2></h2>
+          <h2 className={styles.home} onClick={() => router.replace("/home")}>
+            Home
+          </h2>
           <DropdownMenu.Root>
             <DropdownMenu.Trigger
               style={{ backgroundColor: "transparent", border: "none" }}

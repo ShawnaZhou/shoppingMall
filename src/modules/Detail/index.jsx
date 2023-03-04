@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
-import { HeartIcon } from "@radix-ui/react-icons";
+import dayjs from "dayjs";
 import { Button } from "@/components";
 import { baseUrl } from "@/assets/constants";
 import Header from "../Header/";
@@ -85,7 +85,9 @@ const DetailModule = () => {
             </div>
             <span style={{ color: "gray" }}>{product.productDescription}</span>
 
-            <span style={{ margin: ".3rem" }}>{product.createDate}</span>
+            <span style={{ margin: ".3rem" }}>
+              {dayjs(product.createDate).format("YYYY-MM-DD HH:mm")}
+            </span>
             <span className={styles.price}>¥{product.productPrice}</span>
             <span>COUNT: {product.productStockNumber}</span>
             <div className={styles.nums}>

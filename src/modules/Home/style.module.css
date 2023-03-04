@@ -40,6 +40,42 @@
     border: 2px solid #000;
 }
 
+.tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 80%;
+    margin: 1rem 10%;
+}
+
+.tag {
+    text-transform: uppercase;
+    padding: .3rem 1rem;
+    font-weight: bold;
+    background: #fff;
+    text-align: center;
+    color: #000;
+    line-height: 1.3rem;
+    font-size: .7rem;
+    height: 1.3rem;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all .3s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.checkedTag {
+    border: 2px solid blue;
+}
+
+.tag:hover {
+    border: 2px solid blue;
+}
+
+
 .heart {
     color: red;
     transition: all .3s;
