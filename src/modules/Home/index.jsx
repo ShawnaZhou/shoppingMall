@@ -36,7 +36,9 @@ const Home = () => {
         key={item.productId}
         onClick={() => handleMove(item)}
       >
-        <img className={styles.productImg} src={item.pictureLink} alt={"*"} />
+        <div className={styles.productImg}>
+          <img className={styles.img} src={item.pictureLink} alt={"*"} />
+        </div>
         <div className={styles.productDetail}>
           <span
             style={{
@@ -49,9 +51,6 @@ const Home = () => {
           </span>
           <span className={styles.productDesc}>{item.type}</span>
           <span className={styles.productPrice}>¥{item.productPrice}</span>
-          {/* <div className={styles.productAction}> */}
-          {/* <a>查看</a> */}
-          {/* </div> */}
         </div>
       </div>
     );
@@ -60,7 +59,7 @@ const Home = () => {
   return (
     <div className={styles.Main}>
       <Header />
-      <h3>商品列表: </h3>
+      {/* <h2 style={{ marginLeft: "1rem" }}>商品列表 </h2> */}
       <div className={styles.hotContainer}>
         {productList.length > 0 &&
           productList.map((item) => {

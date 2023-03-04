@@ -1,7 +1,19 @@
 import React from "react";
-// import "./index.css";
+import styles from "./index.module.css";
+
 const Button = (props) => {
-  return <button {...props}>{props.children}</button>;
+  const classes = [props.className ? props.className : "", styles.button].join(
+    " "
+  );
+  return (
+    <>
+      {classes && (
+        <button className={classes} {...props}>
+          {props.children}
+        </button>
+      )}
+    </>
+  );
 };
 
 export default Button;

@@ -22,7 +22,7 @@
 }
 
 .product {
-    width: 30vw;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -52,9 +52,17 @@
 
 .productImg {
     width: 100%;
-    height: 10rem;
-    object-fit: cover;
+    /* height: 10rem; */
     border-bottom: 1px solid #655959;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 100%;
+    object-fit: contain;
 }
 
 .productDetail {
@@ -68,7 +76,10 @@
 }
 
 .productDesc {
-    color: gray;
+    background-color: blue;
+    padding: .2rem .5rem;
+    border-radius: 15px;
+    color: #fff;
 }
 
 .productPrice {

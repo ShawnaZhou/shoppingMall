@@ -51,15 +51,6 @@
     margin: .3rem 0;
 }
 
-.button {
-    background-color: blue;
-    margin-top: 1rem;
-}
-
-.button:hover {
-    background-color: transparent;
-}
-
 .nums {
     display: flex;
     flex-direction: row;
@@ -76,7 +67,15 @@
     line-height: 1rem;
     color: #000;
     background-color: transparent;
+    border: 1px solid #000;
     margin: 0 .5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 .input {

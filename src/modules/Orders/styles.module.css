@@ -1,0 +1,51 @@
+.orderContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e7e5e5;
+}
+
+.price {
+    font-weight: bolder;
+    margin-top: .5rem;
+}
+
+.tag {
+    text-transform: uppercase;
+    padding: .3rem 1rem;
+    font-weight: bold;
+    background: blue;
+    text-align: center;
+    color: #fff;
+    line-height: 1.3rem;
+    font-size: .7rem;
+    height: 1.3rem;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.count {
+    color: gray;
+    margin-top: .5rem;
+}
+
+.orderItemPic {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ECEDF0;
+}
+
+.orderItemImg {
+    height: 150px;
+    object-fit: contain;
+}
