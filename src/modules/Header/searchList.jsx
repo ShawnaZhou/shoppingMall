@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 
 const SearchList = (props) => {
   const [searchResult, setSearchList] = useState([]);
-  const router = useRouter()
+  const { keyword } = props || '';
+  const router = useRouter();
   const updateList = () => {
     setSearchList(props.list);
     console.log("list: ", props.list);
@@ -15,7 +16,8 @@ const SearchList = (props) => {
   };
 
   useEffect(() => {
-    if (props?.list.length > 0) updateList();
+    if (props?.list) updateList();
+    console.log(props);
   }, [props.list]);
 
   return (
@@ -49,6 +51,18 @@ const SearchList = (props) => {
             </div>
           );
         })}
+      {searchResult.length == 0 && keyword.length > 0 && (
+        <div
+          style={{
+            height: "5rem",
+            color: "white",
+            textShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+          }}
+        >
+          {" "}
+          暂无相关商品{" "}
+        </div>
+      )}
     </div>
   );
 };

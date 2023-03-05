@@ -4,9 +4,12 @@ import SearchList from "./searchList";
 import * as Avatar from "@radix-ui/react-avatar";
 import { Button } from "../../components/";
 import { baseUrl } from "@/assets/constants";
+import { RefreshIcon } from "@radix-ui/react-icons";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Header = () => {
   const [keyword, setKeyword] = useState("");
@@ -23,6 +26,7 @@ const Header = () => {
 
   const handleSearch = (e) => {
     if (e && e.key != "Enter") return;
+    if (keyword.length == 0) toast("请输入搜索内容");
     const url = `${baseUrl}/product/search?key=${keyword}`;
     fetch(url)
       .then((res) => res.json())
@@ -34,9 +38,15 @@ const Header = () => {
       });
   };
 
+  const logout = () => {
+    localStorage.removeItem("userInfo");
+    router.replace("../");
+  };
+
   return (
     <>
       <div className={styles.container}>
+        <ToastContainer position="top-center" theme="dark" />
         <div className={styles.avatar}>
           <h2 className={styles.home} onClick={() => router.replace("/home")}>
             Home
@@ -76,8 +86,17 @@ const Header = () => {
                 >
                   我的订单
                 </DropdownMenu.Item>
-                <DropdownMenu.Item className={styles.DropdownMenuItem}>
+                <DropdownMenu.Item
+                  onClick={() => router.push("/profile")}
+                  className={styles.DropdownMenuItem}
+                >
                   我的主页
+                </DropdownMenu.Item>
+                <DropdownMenu.Item
+                  onClick={logout}
+                  className={styles.DropdownMenuItem}
+                >
+                  退出登陆
                 </DropdownMenu.Item>
               </DropdownMenu.Content>
             </DropdownMenu.Portal>
@@ -91,10 +110,11 @@ const Header = () => {
             onKeyDown={(e) => handleSearch(e)}
           />
           <Button onClick={handleSearch} className={styles.button}>
-            <MagnifyingGlassIcon /> <span>搜索</span>
+            <MagnifyingGlassIcon />
+            <span>搜索</span>
           </Button>
         </div>
-        <SearchList list={list} />
+        <SearchList keyword={keyword} list={list} />
       </div>
     </>
   );

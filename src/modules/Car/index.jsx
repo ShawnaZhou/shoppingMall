@@ -62,6 +62,29 @@ const CarModule = () => {
     console.log(tempData);
     setSelected(tempData);
   };
+
+  const handleDelete = (item) => {
+    console.log(item)
+    let data = {
+      shopCarId: item.shopCar.shopCarId,
+    };
+    let url = `${baseUrl}/shopcar`;
+    fetch(url, {
+      method: "DELETE",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.code == 200) {
+          toast("删除成功");
+        }
+        getCarList();
+      });
+  };
+
   return (
     <>
       <Header />
@@ -69,9 +92,17 @@ const CarModule = () => {
       <div className={styles.car}>
         <div className={styles.carHeader}>
           <div>购物车</div>
-          <Button disabled={selected.length == 0} className={styles.payBtn}>
-            结算
-          </Button>
+          <div>
+            {/* <Button
+              disabled={selected.length == 0}
+              style={{ marginRight: "1rem", backgroundColor: "red" }}
+            >
+              删除
+            </Button> */}
+            <Button disabled={selected.length == 0} className={styles.payBtn}>
+              结算
+            </Button>
+          </div>
         </div>
         <div className={styles.carList}>
           {carList.length > 0 &&
@@ -109,6 +140,14 @@ const CarModule = () => {
                       结算
                     </Button>
                   </div>
+                  <Button
+                    style={{
+                      backgroundColor: "red",
+                    }}
+                    onClick={() => handleDelete(item)}
+                  >
+                    删除
+                  </Button>
                 </div>
               );
             })}

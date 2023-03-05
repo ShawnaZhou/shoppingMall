@@ -31,7 +31,12 @@ const Home = () => {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
-        setProductList(res.msg);
+        let temp = res.msg.map((item) => {
+          let link = item.pictureLink;
+          link = item.pictureLink.replaceAll("http://127.0.0.1:5001", baseUrl);
+          return { ...item, pictureLink: link.split("|")[0] };
+        });
+        setProductList(temp);
       })
       .catch((err) => {
         console.warn(err);

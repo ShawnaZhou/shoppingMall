@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -10,11 +10,7 @@
 }
 
 .bgImg {
-    position: absolute;
     background-color: lightblue;
-    top: 0;
-    left: 0;
-    z-index: 1;
     height: 100vh;
     width: 50vw;
     object-fit: cover;
@@ -22,13 +18,12 @@
 
 .mainContent {
     color: #fff;
-    align-self: flex-end;
+    align-self: center;
     width: 50rem;
     /*    background-color: rgba(255,255,255,.5);*/
     /*    backdrop-filter:blur(50px);*/
     height: 40rem;
     position: relative;
-    z-index: 10;
     border-radius: 40px;
     /*    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;*/
     display: flex;
@@ -59,7 +54,7 @@
     height: 55px;
     font-size: 15px;
     line-height: 1;
-    background-color: black;
+    /* background-color: black; */
     box-shadow: 0 0 0 1px black;
 }
 
@@ -70,8 +65,67 @@
 .button {
     margin-top: 4rem;
     background-color: #000;
-    width: 300px;
-    height: 60px;
+    border: 2px solid transparent;
+    color: #fff;
+    width: 200px;
+    height: 50px;
     font-size: 1.1rem;
     letter-spacing: 5px;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 5px;
+}
+
+.button:hover {
+    border: 2px solid #000;
+    color: #000;
+    background-color: transparent;
+}
+
+
+.dialog {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.dialogContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dialogFooter {
+    position: absolute;
+    bottom: 0rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.dialogItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    width: 4rem;
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.inputs {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    padding: .5rem 1rem;
+    width: 15rem;
+    border: 2px solid #000;
+    border-radius: 5px;
 }

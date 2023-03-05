@@ -46,7 +46,8 @@
 
 .car {
     height: 100%;
-    margin: 1rem;
+    margin: 1rem auto;
+    max-width: 1200px;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -86,6 +87,7 @@
 
 .carItemDetail {
     padding: 0 0 1rem 3rem;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,8 +101,7 @@
     color: #fff;
     line-height: 1.3rem;
     font-size: .7rem;
-    height: 1.3rem;
-    width: 50%;
+    padding: .2rem .4rem;
     overflow: hidden;
     border-radius: 15px;
 }

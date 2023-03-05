@@ -30,7 +30,11 @@ const DetailModule = () => {
       })
       .then((res) => {
         console.log(res);
-        setProduct(res.msg);
+        let link = res.msg.pictureLink.replaceAll(
+          "http://127.0.0.1:5001",
+          baseUrl
+        );
+        setProduct({ ...res.msg, pictureLink: link.split("|")[0] });
       })
       .catch((err) => {
         console.warn(err);
