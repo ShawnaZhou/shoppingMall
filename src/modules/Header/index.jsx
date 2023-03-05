@@ -109,7 +109,7 @@ const Header = () => {
             className={styles.input}
             onKeyDown={(e) => handleSearch(e)}
           />
-          <Button onClick={handleSearch} className={styles.button}>
+          <Button onClick={() => handleSearch()} className={styles.button}>
             <MagnifyingGlassIcon />
             <span>搜索</span>
           </Button>

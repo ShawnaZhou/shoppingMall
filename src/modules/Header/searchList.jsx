@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.css";
+import { baseUrl } from "@/assets/constants";
 import { useRouter } from "next/router";
 
 const SearchList = (props) => {
   const [searchResult, setSearchList] = useState([]);
-  const { keyword } = props || '';
+  const { keyword } = props || "";
   const router = useRouter();
   const updateList = () => {
-    setSearchList(props.list);
-    console.log("list: ", props.list);
+    let list = props.list.map((item) => {
+      let link = item.pictureLink.replaceAll("http://127.0.0.1:5001", baseUrl);
+      return { ...item, pictureLink: link.split("|")[0] };
+    });
+    setSearchList(list);
   };
 
   const handleMove = (data) => {
@@ -59,8 +63,7 @@ const SearchList = (props) => {
             textShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
           }}
         >
-          {" "}
-          暂无相关商品{" "}
+          暂无相关商品
         </div>
       )}
     </div>
